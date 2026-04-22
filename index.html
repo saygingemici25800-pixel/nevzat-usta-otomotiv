@@ -218,13 +218,20 @@ header{
 /* ── HERO: CONTENT ONLY ── */
 .hero{
   position:relative;
-  height:70vh;
+  min-height:auto;
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
-  padding-top:80px;
+  justify-content:center;
+  padding-top:120px;
   padding-bottom:48px;
   z-index:2;
+}
+@media(min-width:900px){
+  .hero{
+    height:70vh;
+    justify-content:flex-end;
+    padding-top:80px;
+  }
 }
 
 .hero-tag{
@@ -234,13 +241,16 @@ header{
   border:1px solid rgba(229,57,53,0.15);
   color:var(--red);font-size:.7rem;font-weight:500;
   letter-spacing:1.2px;text-transform:uppercase;
-  margin-bottom:32px;width:fit-content;
+  margin-bottom:24px;width:fit-content;
+}
+@media(min-width:900px){
+  .hero-tag{margin-bottom:32px}
 }
 
 .hero-row{
   display:flex;
   flex-direction:column;
-  gap:32px;
+  gap:24px;
 }
 @media(min-width:900px){
   .hero-row{
@@ -252,18 +262,26 @@ header{
 }
 
 .hero h1{
-  font-size:clamp(2.6rem,6.8vw,5.4rem);
+  font-size:clamp(2rem,6.8vw,5.4rem);
+  line-height:1.05;
   letter-spacing:-.045em;
   max-width:750px;
   flex-shrink:0;
+}
+@media(max-width:640px){
+  .hero-h1 br{display:none}
+  .hero-h1{font-size:2.4rem;line-height:1.1}
 }
 
 .hero-right{
   display:flex;
   flex-direction:column;
-  gap:24px;
+  gap:16px;
   max-width:400px;
   padding-bottom:8px;
+}
+@media(min-width:900px){
+  .hero-right{gap:24px}
 }
 
 .hero-sub{
@@ -1647,7 +1665,7 @@ a,button{transition-duration:.2s}
 <div class="wrap">
 <div class="hero-tag">Çeyrek Asırlık Sevgi</div>
 <div class="hero-row">
-<h1>Fethiye<br>Sanayisinin<br>Tecrübeli Eli:<br>Nevzat Usta</h1>
+<h1 class="hero-h1">Fethiye<br>Sanayisinin<br>Tecrübeli Eli:<br>Nevzat Usta</h1>
 <div class="hero-right">
 <p class="hero-sub">25 yılı aşkın tecrübeyle motor revizyonu, mekanik onarım ve garantili usta işçiliği. Çözülemeyen arızalar, titiz çalışma ve dürüst esnaflıkla aracınız emin ellerde.</p>
 <div class="hero-intl">
