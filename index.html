@@ -2215,7 +2215,7 @@ Tasyaka Sanayi, Fethiye, Turkey
 </div>
 </div>
 
-<form id="contactForm" class="contact-form" action="https://formspree.io/f/xzdykpqj" method="POST" novalidate>
+<form id="contactForm" class="contact-form" action="https://formspree.io/f/xzdykpqj" method="POST">
 <div class="contact-form-inner">
 <h3>Bize Ulaşın</h3>
 <p class="contact-form-sub">Aşağıdaki formu doldurun, ekibimiz en kısa sürede size dönüş yapsın.</p>
@@ -2841,6 +2841,18 @@ Tasyaka Sanayi, Fethiye, Turkey
     e.preventDefault();
     ok.style.display='none';
     err.style.display='none';
+
+    if(!cform.checkValidity()){
+      cform.reportValidity();
+      return;
+    }
+    var consent=cform.querySelector('input[name="kvkk_consent"]');
+    if(!consent||!consent.checked){
+      if(consent) consent.focus();
+      showErr('Devam edebilmek için KVKK aydınlatma metnini onaylamanız gereklidir.');
+      return;
+    }
+
     btn.disabled=true;
     btn.textContent='Gönderiliyor...';
 
