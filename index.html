@@ -1263,7 +1263,10 @@ header{
 }
 .cf-submit:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 6px 28px var(--red-g)}
 .cf-submit:active{transform:translateY(0) scale(.97)}
-#contactOk{display:none;margin-top:12px;color:#4caf50;font-size:.86rem;font-weight:600;text-align:center}
+#contactOk{display:none;margin-top:12px;color:#4caf50;font-size:.86rem;font-weight:600;text-align:center;line-height:1.5}
+#contactErr{display:none;margin-top:12px;color:#E53935;font-size:.86rem;font-weight:600;text-align:center;line-height:1.5}
+.cf-submit[disabled]{opacity:.6;cursor:not-allowed;transform:none;pointer-events:none}
+.cf-submit[disabled]:hover{background:var(--red);transform:none;box-shadow:0 4px 20px var(--red-g)}
 
 /* ── TYPEWRITER ── */
 .tw-cursor{
@@ -2082,32 +2085,36 @@ Tasyaka Sanayi, Fethiye, Turkey
 </div>
 </div>
 
-<div class="contact-form">
+<form id="contactForm" class="contact-form" action="https://formspree.io/f/xzdykpqj" method="POST" novalidate>
 <div class="contact-form-inner">
 <h3>Bize Ulaşın</h3>
 <p class="contact-form-sub">Aşağıdaki formu doldurun, ekibimiz en kısa sürede size dönüş yapsın.</p>
 
+<input type="hidden" name="_subject" value="NUO Web — Yeni İletişim Formu">
+<input type="hidden" name="_language" value="tr">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0">
+
 <div class="cf-row">
 <div class="cf-group">
 <label for="cf-name">Adınız Soyadınız</label>
-<input type="text" id="cf-name" placeholder="Nevzat Usta">
+<input type="text" id="cf-name" name="name" placeholder="Nevzat Usta" required autocomplete="name">
 <span class="cf-hint">Tam adınızı giriniz.</span>
 </div>
 <div class="cf-group">
 <label for="cf-email">E-posta Adresi</label>
-<input type="email" id="cf-email" placeholder="ornek@domain.com">
+<input type="email" id="cf-email" name="email" placeholder="ornek@domain.com" required autocomplete="email">
 </div>
 </div>
 
 <div class="cf-row">
 <div class="cf-group">
 <label for="cf-phone">Telefon Numarası</label>
-<input type="tel" id="cf-phone" placeholder="+90 555 123 4567">
+<input type="tel" id="cf-phone" name="phone" placeholder="+90 555 123 4567" autocomplete="tel">
 <span class="cf-hint">Uluslararası formatta giriniz.</span>
 </div>
 <div class="cf-group">
 <label for="cf-lang">Tercih Edilen Dil</label>
-<select id="cf-lang">
+<select id="cf-lang" name="language">
 <option value="tr">Turkce</option>
 <option value="en">English</option>
 <option value="ru">Русский</option>
@@ -2117,19 +2124,20 @@ Tasyaka Sanayi, Fethiye, Turkey
 
 <div class="cf-group" style="margin-bottom:16px">
 <label for="cf-subject">Konu</label>
-<input type="text" id="cf-subject" placeholder="Ornegin: Motor Onarimi">
+<input type="text" id="cf-subject" name="subject" placeholder="Ornegin: Motor Onarimi" required>
 </div>
 
 <div class="cf-group" style="margin-bottom:16px">
 <label for="cf-msg">Mesajınız</label>
-<textarea id="cf-msg" placeholder="Detaylı olarak sorununuzu veya talebinizi yazın." maxlength="500"></textarea>
+<textarea id="cf-msg" name="message" placeholder="Detaylı olarak sorununuzu veya talebinizi yazın." maxlength="500" required></textarea>
 <span class="cf-hint">En fazla 500 karakter.</span>
 </div>
 
-<button type="button" class="cf-submit" onclick="document.getElementById('contactOk').style.display='block'">Mesaj Gönder</button>
-<div id="contactOk">Mesajınız alındı! En kısa sürede dönüş yapacağız.</div>
+<button type="submit" class="cf-submit">Mesaj Gönder</button>
+<div id="contactOk" role="status" aria-live="polite">Mesajınız alındı! En kısa sürede dönüş yapacağız.</div>
+<div id="contactErr" role="alert" aria-live="assertive">Mesaj gönderilemedi. Lütfen tekrar deneyin.</div>
 </div>
-</div>
+</form>
 
 </div>
 
@@ -2673,6 +2681,56 @@ Tasyaka Sanayi, Fethiye, Turkey
     }
   },{threshold:.3});
   io.observe(el.closest('h2')||el);
+})();
+
+/* ── CONTACT FORM (Formspree AJAX) ── */
+(function(){
+  var cform=document.getElementById('contactForm');
+  if(!cform) return;
+  var btn=cform.querySelector('.cf-submit');
+  var ok=document.getElementById('contactOk');
+  var err=document.getElementById('contactErr');
+  var originalText=btn.textContent;
+
+  function showErr(msg){
+    err.textContent=msg;
+    err.style.display='block';
+  }
+
+  cform.addEventListener('submit',function(e){
+    e.preventDefault();
+    ok.style.display='none';
+    err.style.display='none';
+    btn.disabled=true;
+    btn.textContent='Gönderiliyor...';
+
+    fetch(cform.action,{
+      method:'POST',
+      body:new FormData(cform),
+      headers:{'Accept':'application/json'}
+    }).then(function(r){
+      if(r.ok){
+        ok.textContent='Mesajınız alındı! En kısa sürede dönüş yapacağız.';
+        ok.style.display='block';
+        cform.reset();
+        return;
+      }
+      return r.json().then(function(d){
+        if(d && d.errors && d.errors.length){
+          showErr(d.errors.map(function(x){return x.message}).join(', '));
+        }else{
+          showErr('Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin.');
+        }
+      }).catch(function(){
+        showErr('Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin.');
+      });
+    }).catch(function(){
+      showErr('Ağ hatası. İnternet bağlantınızı kontrol edip tekrar deneyin.');
+    }).finally(function(){
+      btn.disabled=false;
+      btn.textContent=originalText;
+    });
+  });
 })();
 </script>
 </body>
