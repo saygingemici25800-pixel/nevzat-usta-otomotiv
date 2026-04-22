@@ -1,0 +1,46 @@
+# robots.txt — Nevzat Usta Otomotiv
+# https://nevzat-usta-otomotiv.vercel.app
+
+# Varsayılan: tüm arama motorlarına izin ver
+User-agent: *
+Allow: /
+
+# Proje dokümantasyonu Google'a çıkmasın
+Disallow: /*.md$
+Disallow: /CLAUDE.md
+Disallow: /README.md
+Disallow: /DESIGN_SYSTEM.md
+
+# ── SEO scraper / backlink botları — engelli ───────────────
+# Sebep: rekabet istihbaratı toplar, site sahibine değer katmaz,
+# sunucu kaynağı tüketir. Google / Bing / Yandex etkilenmez.
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: SeekportBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+# ── Sitemap ────────────────────────────────────────────────
+Sitemap: https://nevzat-usta-otomotiv.vercel.app/sitemap.xml
