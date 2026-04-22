@@ -1615,7 +1615,7 @@ a,button{transition-duration:.2s}
 
 </style>
 
-<!-- Google Search Console: verify via meta tag or /google-site-verification.html -->
+<!-- Search Console verified via meta tag -->
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-48R2D9T9N4"></script>
@@ -2898,6 +2898,12 @@ Taşyaka Mh, 269. Sk. No:60, 48300 Fethiye/Muğla
         ok.textContent='Mesajınız alındı! En kısa sürede dönüş yapacağız.';
         ok.style.display='block';
         cform.reset();
+        if(typeof gtag==='function'){
+          gtag('event','form_submit',{
+            'event_category':'engagement',
+            'event_label':'contact_form'
+          });
+        }
         return;
       }
       return r.json().then(function(d){
