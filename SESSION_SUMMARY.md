@@ -2,7 +2,7 @@
 
 **Tarih:** 22 Nisan 2026
 **Proje:** Nevzat Usta Otomotiv — Fethiye oto servis
-**Canlı URL:** https://nevzat-usta-otomotiv.vercel.app
+**Canlı URL:** https://nevzatustaotomotiv.com
 
 ---
 

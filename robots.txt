@@ -1,5 +1,5 @@
 # robots.txt — Nevzat Usta Otomotiv
-# https://nevzat-usta-otomotiv.vercel.app
+# https://nevzatustaotomotiv.com
 
 # Varsayılan: tüm arama motorlarına izin ver
 User-agent: *
@@ -43,4 +43,4 @@ User-agent: serpstatbot
 Disallow: /
 
 # ── Sitemap ────────────────────────────────────────────────
-Sitemap: https://nevzat-usta-otomotiv.vercel.app/sitemap.xml
+Sitemap: https://nevzatustaotomotiv.com/sitemap.xml
