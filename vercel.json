@@ -1,14 +1,25 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [
         {
           "type": "host",
           "value": "nevzat-usta-otomotiv.vercel.app"
         }
       ],
-      "destination": "https://nevzatustaotomotiv.com/:path*",
+      "destination": "https://nevzatustaotomotiv.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [
+        {
+          "type": "host",
+          "value": "nevzat-usta-otomotiv.vercel.app"
+        }
+      ],
+      "destination": "https://nevzatustaotomotiv.com/:path+",
       "permanent": true
     }
   ]
