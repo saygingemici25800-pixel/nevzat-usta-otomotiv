@@ -275,8 +275,15 @@ header{
   flex-shrink:0;
 }
 @media(max-width:640px){
+  .hero{padding-top:90px;padding-bottom:24px}
+  .hero-tag{margin-bottom:16px}
   .hero-h1 br{display:none}
-  .hero-h1{font-size:2.4rem;line-height:1.1}
+  .hero-h1{font-size:2rem;line-height:1.05}
+  .hero-row{gap:16px}
+  .hero-intl{padding:8px 10px}
+  .hero-btns{margin-top:10px;gap:10px}
+  .hero-btns .btn-o{display:none}
+  .photo-img{object-position:50% 22%}
 }
 
 .hero-right{
@@ -930,6 +937,14 @@ header{
   opacity:0;transition:opacity .3s;
 }
 .faq-btn-wrap:hover .faq-btn-fallback{opacity:0}
+
+@media(max-width:640px){
+  .faq-left{position:static;top:auto}
+  .faq-layout{gap:32px}
+  .faq-left p{margin-bottom:24px}
+  .faq-btn-wrap{width:100%;max-width:300px;height:64px}
+  .faq-btn-fallback{font-size:1rem}
+}
 
 /* Right side - accordion */
 .faq-list{display:flex;flex-direction:column;gap:0}
