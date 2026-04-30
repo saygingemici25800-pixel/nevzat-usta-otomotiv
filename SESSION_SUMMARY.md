@@ -52,9 +52,9 @@
 ## ⏳ Bekleyen Kritik İşler (Nevzat Usta Görüşmesi Sonrası)
 
 ### 1. Gerçek e-posta adresi
-- Şu an: `info@nevzatustao.com` (**placeholder, gerçekte kutusu yok**)
+- Şu an: `nevzatolpakefatura@hotmail.com` (**placeholder, gerçekte kutusu yok**)
 - Geçtiği yerler: `index.html` (JSON-LD + iletişim bölümü), `kvkk.html` (2 info-card) — toplam 5 nokta
-- Güncelleme: `sed -i '' 's|info@nevzatustao.com|GERÇEK@email.com|g' *.html`
+- Güncelleme: `sed -i '' 's|nevzatolpakefatura@hotmail.com|GERÇEK@email.com|g' *.html`
 - Formspree target e-posta'sını da aynı adrese değiştirmek gerek (panelden)
 
 ### 2. Nevzat Usta Gmail + Google Business Profile

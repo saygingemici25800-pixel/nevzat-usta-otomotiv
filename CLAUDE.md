@@ -127,7 +127,7 @@ Light (300)   → Tarihler, meta, form etiketleri, footer, ipuçları
 
 ```
 Telefon: 0532 480 09 28
-E-posta: info@nevzatustao.com
+E-posta: nevzatolpakefatura@hotmail.com
 Adres: Taşyaka Sanayi, Fethiye, Turkey
 Instagram: @nevzatusta
 WhatsApp: +90 532 480 09 28
