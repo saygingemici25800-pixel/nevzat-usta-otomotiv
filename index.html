@@ -1081,6 +1081,15 @@ header{
 }
 .g-item-icon svg{width:14px;height:14px;color:var(--mute)}
 
+.g-item-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  z-index:0;
+  transition:transform .4s ease;
+}
+.g-item:hover .g-item-img{transform:scale(1.04)}
+
 /* Overlay on hover */
 .g-item::after{
   content:'';position:absolute;inset:0;
@@ -1795,99 +1804,63 @@ Hizmetleri Gör
 <div class="gallery-grid">
 
 <div class="g-item g-tall sr">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Motor Revizyonu</span>
-</div>
-<div class="g-item-label">Komple motor revizyonu — Volkswagen Passat</div>
+<img class="g-item-img" src="images/usta-portre.jpg" alt="Nevzat Olpak — Nevzat Usta Otomotiv'in kurucusu, Fethiye'de 25 yıllık tecrübeli oto ustası" loading="lazy" width="1600" height="2133">
+<div class="g-item-label">Usta Eli — Nevzat Olpak, 25 yıllık tecrübe</div>
 </div>
 
 <div class="g-item sr sr-d1">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Blok Temizlik</span>
-</div>
-<div class="g-item-label">Silindir bloğu ultrasonik temizlik</div>
+<img class="g-item-img" src="images/lift-detay.jpg" alt="Lift üzerinde araç bakımı — Nevzat Usta Otomotiv Fethiye atölyesi" loading="lazy" width="1358" height="1400">
+<div class="g-item-label">Lift üzerinde araç bakım ve onarım</div>
 </div>
 
 <div class="g-item sr sr-d2">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Krank Taşlama</span>
-</div>
-<div class="g-item-label">Krank mili hassas taşlama işlemi</div>
+<img class="g-item-img" src="images/anahtar-tahtasi.jpg" alt="Müşteri anahtar tahtası — Nevzat Usta Otomotiv'de düzenli takip" loading="lazy" width="1245" height="1400">
+<div class="g-item-label">Müşteri anahtarları — düzenli takip</div>
 </div>
 
 <div class="g-item sr sr-d3">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Piston Montaj</span>
-</div>
-<div class="g-item-label">Yeni piston ve segman montajı</div>
+<img class="g-item-img" src="images/mannol-tabela.jpg" alt="Mannol motor yağları — Nevzat Usta Otomotiv'de orijinal ürün kullanımı" loading="lazy" width="1600" height="1091">
+<div class="g-item-label">Mannol motor yağları — orijinal ürün</div>
 </div>
 
 <div class="g-item g-wide sr">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Atölye Genel</span>
-</div>
-<div class="g-item-label">Nevzat Usta Otomotiv — Fethiye atölyemiz</div>
+<img class="g-item-img" src="images/atolye-cephe.jpg" alt="Nevzat Usta Otomotiv atölye cephesi — Fethiye Taşyaka Sanayi Sitesi" loading="lazy" width="2000" height="1500">
+<div class="g-item-label">Atölyemizin cephesi — Fethiye Taşyaka</div>
 </div>
 
 <div class="g-item sr sr-d1">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Şanzıman</span>
-</div>
-<div class="g-item-label">Otomatik şanzıman iç mekanizma onarımı</div>
+<img class="g-item-img" src="images/ataturk-saat.jpg" alt="Atölyeden detaylar — Nevzat Usta Otomotiv köklü esnaflık geleneği" loading="lazy" width="1600" height="1200">
+<div class="g-item-label">Atölyeden detaylar — köklü esnaflık</div>
 </div>
 
 <div class="g-item sr sr-d2">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Diagnostik</span>
-</div>
-<div class="g-item-label">OBD-II arıza teşhis taraması</div>
+<img class="g-item-img" src="images/twingo-detay.jpg" alt="Renault Twingo bakım — Nevzat Usta Otomotiv Fethiye'de müşteri aracı" loading="lazy" width="1600" height="1091">
+<div class="g-item-label">Müşteri aracı — Renault Twingo bakımı</div>
 </div>
 
 <div class="g-item g-tall sr sr-d3">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Yol Yardım</span>
-</div>
-<div class="g-item-label">Gece yol yardım müdahalesi — Fethiye</div>
+<img class="g-item-img" src="images/atolye-ici.jpg" alt="Atölye içi iş başında — Nevzat Usta Otomotiv Fethiye'de profesyonel hizmet" loading="lazy" width="2000" height="1500">
+<div class="g-item-label">İş başında — atölyemizden bir an</div>
 </div>
 
 <div class="g-item sr">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Fren Sistemi</span>
-</div>
-<div class="g-item-label">Fren disk ve balata değişimi</div>
+<img class="g-item-img" src="images/aletler-detay.jpg" alt="Hassas oto ustası aletleri — Nevzat Usta Otomotiv ekipman detayı" loading="lazy" width="1600" height="842">
+<div class="g-item-label">Hassas aletler — uzmanlık ekipmanı</div>
 </div>
 
 <div class="g-item sr sr-d1">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Süspansiyon</span>
-</div>
-<div class="g-item-label">Amortisör ve rotil değişimi</div>
+<img class="g-item-img" src="images/aletler-duvari.jpg" alt="Düzenli alet duvarı — Nevzat Usta Otomotiv profesyonel atölye organizasyonu" loading="lazy" width="2000" height="1500">
+<div class="g-item-label">Aletler duvarı — her şey yerinde</div>
 </div>
 
 <div class="g-item g-wide sr sr-d2">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Teslim Anı</span>
-</div>
-<div class="g-item-label">Müşteri memnuniyeti — aracın teslim anı</div>
+<img class="g-item-img" src="images/tabela-detay.jpg" alt="Nevzat Usta Otomotiv tabelası — Fethiye atölye markası" loading="lazy" width="1600" height="600">
+<div class="g-item-label">Markamız — Nevzat Usta Otomotiv tabelası</div>
 </div>
 
 <div class="g-item sr sr-d3">
-<div class="g-item-inner">
-<div class="g-item-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-<span>Debriyaj</span>
-</div>
-<div class="g-item-label">Debriyaj seti komple değişim</div>
+<img class="g-item-img" src="images/usta-portre-yatay.jpg" alt="Nevzat Olpak iş başında — 25 yıllık esnaflık tutkusu" loading="lazy" width="1400" height="1026">
+<div class="g-item-label">Tutku — 25 yıllık esnaflık geleneği</div>
 </div>
 
 </div>
